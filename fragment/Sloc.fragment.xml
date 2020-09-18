@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Plants" class="sapUiPopupWithPadding" items="{/StorageLocationSet}" search="_handleValueHelpSearch"
+		confirm="_handleSlocValueHelpClose" cancel="_handleSlocValueHelpClose">
+		<StandardListItem title="{LGORT}" description="{LGOBE}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="Products" class="sapUiPopupWithPadding" items="{/MaterialSet}" search="_handleMatrnValueHelpSearch"
+		confirm="_handleMatnrValueHelpClose" cancel="_handleMatnrValueHelpClose">
+		<StandardListItem title="{Matnr}" description="{Maktx}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

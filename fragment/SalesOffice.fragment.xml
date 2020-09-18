@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog title="ĐIỂM BÁN HÀNG" class="sapUiPopupWithPadding" items="{/SaleOfficesSet}" search="_handleValueHelpSearch"
+		confirm="_handleSalseOfficeValueHelpClose" cancel="_handleSalseOfficeValueHelpClose">
+		<StandardListItem title="{SaleOffice}" description="{Address}"/>
+	</SelectDialog>
+</core:FragmentDefinition>

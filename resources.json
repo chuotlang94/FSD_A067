@@ -1,0 +1,100 @@
+{
+    "resources": [
+        {
+            "name": "model/formatter.js"
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/Object.view.xml"
+        },
+        {
+            "name": "view/NotFound.view.xml"
+        },
+        {
+            "name": "view/ObjectNotFound.view.xml"
+        },
+        {
+            "name": "view/Worklist.view.xml"
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "resources.json",
+            "merged": true
+        },
+        {
+            "name": ".project.json"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/Object.controller.js"
+        },
+        {
+            "name": "controller/Worklist.controller.js"
+        },
+        {
+            "name": "controller/ErrorHandler.js"
+        },
+        {
+            "name": "controller/NotFound.controller.js"
+        },
+        {
+            "name": "controller/BaseController.js"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "localService/metadata.xml"
+        },
+        {
+            "name": "localService/mockserver.js"
+        },
+        {
+            "name": "fragment/Sloc.fragment.xml"
+        },
+        {
+            "name": "fragment/SalesOffice.fragment.xml"
+        },
+        {
+            "name": "fragment/BaseUnit.fragment.xml"
+        },
+        {
+            "name": "fragment/Customer.fragment.xml"
+        },
+        {
+            "name": "fragment/CreateSOMaterial.fragment.xml"
+        },
+        {
+            "name": "fragment/MatnrFragment.fragment.xml"
+        },
+        {
+            "name": "fragment/Plant.fragment.xml"
+        },
+        {
+            "name": ".user.project.json"
+        }
+    ]
+}

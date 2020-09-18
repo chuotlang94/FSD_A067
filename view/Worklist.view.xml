@@ -1,0 +1,19 @@
+<mvc:View controllerName="mavin.create.so.ZFIORI_DC_CREATE_SO.controller.Worklist" xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.f.semantic" xmlns:footerbar="sap.ushell.ui.footerbar">
+	<semantic:SemanticPage id="page" headerPinnable="false" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title text="{i18n>worklistTitle}"/>
+		</semantic:titleHeading>
+		<semantic:content>
+			<Panel>
+				<VBox height="100px" alignItems="Center" justifyContent="Center">
+					<items>
+						<Input id="productInput" type="Text" placeholder="MÃ XÁC THỰC  ..." width="20rem" required="true"/>
+						<Input id="productPass" type="Password" placeholder="PASS  ..." width="20rem" required="true" submit="onValidationCheck"/>
+						<Button text="XÁC THỰC" type="Accept" press="onValidationCheck" width="20rem"/>
+					</items>
+				</VBox>
+			</Panel>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>

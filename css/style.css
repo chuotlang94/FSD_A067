@@ -1,0 +1,44 @@
+/* Enter your custom styles here */
+.CustomPadding {
+	padding: 0rem !important;
+}
+
+.reSizeWidth{
+	width: 1rem !important;
+}
+
+.tblInformation table {
+}
+
+.tblInformation table tr td {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    border: 0 none;
+}
+
+.tblInformation table thead th,
+.tblInformation table thead tr {
+    height: 1px;
+    border-color: transparent !important;
+    border: 0 none;
+    background-color: transparent !important;
+}
+
+.tblInformation table thead tr div {
+    height: 1px;
+    width: 1px;
+    position: absolute;
+    overflow: hidden;
+    top: -10px;
+}
+
+.tblInformation table thead tr {
+    height: 1px;
+    border-color: transparent !important;
+    border: 0 none;
+    background-color: transparent !important;
+}
+
+.totalFooterFake{
+	background-color: #f5b04d !important;
+}

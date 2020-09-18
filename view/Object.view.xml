@@ -1,0 +1,213 @@
+<mvc:View xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns:semantic="sap.m.semantic" xmlns:semanticm="sap.m.semantic" xmlns:footerbar="sap.ushell.ui.footerbar" controllerName="mavin.create.so.ZFIORI_DC_CREATE_SO.controller.Object">
+	<semantic:SemanticPage id="page">
+		<semantic:content>
+			<IconTabBar id="idIconTabBarMulti" expanded="{device>/isNoPhone}" class="sapUiResponsiveContentPadding" select="onTabBarItemsSelect">
+				<items>
+					<IconTabFilter id="tab_01" icon="sap-icon://complete" text="KT TỒN KHO" key="01">
+						<f:SimpleForm id="SimpleFormChange354" editable="true" layout="ResponsiveGridLayout" title="KIỂM TRA TỒN KHO" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="MÃ THÀNH PHẨM"/>
+								<Input id="name" value="" showValueHelp="true" valueHelpRequest="handleMatnrValueHelp" required="true"/>
+								<Label text="NHÀ MÁY"/>
+								<Input id="plant" value="" showValueHelp="true" valueHelpRequest="handlePlantValueHelp" required="true"/>
+								<Label text="KHO"/>
+								<Input id="sloc" value="" showValueHelp="true" valueHelpRequest="handleSLocValueHelp"/>
+								<Label text="ĐƠN VỊ TÍNH"/>
+								<Input id="uom" value="" showValueHelp="true" valueHelpRequest="handleUoMValueHelp" required="true"/>
+								<Label text="NGÀY CHẠY BÁO CÁO"/>
+								<DatePicker id="reportingdate" valueFormat="yyyyMMdd" displayFormat="dd/MM/YYYY"/>
+							</f:content>
+						</f:SimpleForm>
+						<f:SimpleForm id="Result" editable="true" layout="ResponsiveGridLayout" title="KẾT QUẢ KIỂM TRA TỒN KHO" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" visible="false">
+							<f:content binding="{objectView>/matAvaiCheck}">
+								<Label text="MÃ THÀNH PHẨM"/>
+								<ObjectIdentifier title="{objectView>/matAvaiCheck/MATERIAL} {objectView&gt;/matAvaiCheck/MATERIALDESC}"/>
+								<Label text="KHO CÁM THÀNH PHẨM"/>
+								<Text text="{objectView>/matAvaiCheck/PLANTDESC}"/>
+								<Label text="KHO"/>
+								<Text text="{objectView>/matAvaiCheck/STGE_LOC}"/>
+								<Label text="TỒN KHO"/>
+								<Text text="{objectView>/matAvaiCheck/WKBST} {objectView&gt;/matAvaiCheck/UNIT}"/>
+								<Label text="HÀNG NHẬN TƯƠNG LAI"/>
+								<DatePicker valueFormat="yyyyMMdd" displayFormat="dd/MM/YYYY" value="{objectView>/matAvaiCheck/AVAILDATE}" editable="false"/>
+								<Label text=""/>
+								<Text text="{objectView>/matAvaiCheck/REC_REQD_QTY} {objectView&gt;/matAvaiCheck/UNIT}"/>
+							</f:content>
+						</f:SimpleForm>
+					</IconTabFilter>
+					<IconTabFilter id="tab_02" icon="sap-icon://create-entry-time" text="TẠO ĐƠN HÀNG" key="02">
+						<f:SimpleForm id="SimpleFormChange355" editable="true" layout="ResponsiveGridLayout" title="THÔNG TIN CHUNG" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="ĐIỂM BÁN HÀNG"/>
+								<Input id="salesoffice" value="" showValueHelp="true" valueHelpRequest="handleSaleOfficeValueHelp" required="true">
+									<layoutData>
+										<l:GridData span="XL1 L2 M2 S12"/>
+									</layoutData>
+								</Input>
+								<Input id="salesofficetext" value="" editable="false"/>
+								<Label text="NGÀY GIAO HÀNG"/>
+								<DatePicker id="deldate" valueFormat="yyyyMMdd" displayFormat="dd/MM/YYYY" required="true" dateValue="{objectView>/currentDate}" class="sapUiSmallMarginBottom"/>
+								<Label text="MÃ KHÁCH HÀNG"/>
+								<Input id="soldtoparty" value="" description="" showValueHelp="true" valueHelpRequest="handleCustomerValueHelp" required="true">
+									<layoutData>
+										<l:GridData span="XL1 L2 M2 S12"/>
+									</layoutData>
+								</Input>
+								<Input id="custInfo" editable="false"/>
+								<Label text="NHÀ MÁY"/>
+								<Select id="defaultPlant" items="{/PlantSet}" selectedKey="2010" width="100%" change="onPlantChange">
+									<core:Item key="{Werks}" text="{Werks}: {Name}"/>
+								</Select>
+							</f:content>
+						</f:SimpleForm>
+						<f:SimpleForm id="SimpleFormChange356" editable="true" layout="ResponsiveGridLayout" title="THÔNG TIN CHI TIẾT" labelSpanXL="3" labelSpanL="3" labelSpanM="3" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="4" emptySpanL="4" emptySpanM="4" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false">
+							<f:content>
+								<Label text="MÃ THÀNH PHẨM"/>
+								<Input id="somatno" valueHelpOnly="true" value="" showValueHelp="true" valueHelpRequest="handleSOMaterialValueHelp" required="true"/>
+								<Label text="SÔ LƯỢNG"/>
+								<Input id="soquan" value="" type="Number" required="true"/>
+								<Input id="souom" value="" editable="false"/>
+								<Input id="souomorg" value="" editable="false" visible="false"/>
+								<Button text="THÊM MỚI" press="onAddNewItem"/>
+							</f:content>
+						</f:SimpleForm>
+						<ScrollContainer>
+            			<content>
+						<Table id="idProductsTable" inset="false" items="{objectView>/sOItems}">
+							<columns>
+								<Column width="3rem" hAlign="Begin" demandPopin="false">
+									<Text text=""/>
+								</Column>
+								<Column width="5.5rem">
+									<Text text="MÃ VẬT TƯ"/>
+								</Column>
+								<Column minScreenWidth="Tablet" demandPopin="false" width="7rem">
+									<Text text="TÊN VẬT TƯ"/>
+								</Column>
+								<Column hAlign="End" width="4rem">
+									<Text text="SÔ LƯỢNG"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="4rem">
+									<Text text="ĐƠN VỊ"/>
+								</Column>
+								<Column demandPopin="false" hAlign="End" width="7rem">
+									<Text text="TRỌNG LƯỢNG"/>
+								</Column>
+								<Column demandPopin="true" hAlign="End" width="4rem">
+									<Text text="NHÀ MÁY"/>
+								</Column>
+								<Column demandPopin="false" hAlign="End" width="7rem">
+									<Text text="GIÁ"/>
+								</Column>
+								<Column demandPopin="false" hAlign="End" width="7rem">
+									<Text text="CHIẾT KHẤU"/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="7rem">
+									<Text text="THUẾ"/>
+								</Column>
+								<Column hAlign="End" width="7rem">
+									<Text text="THÀNH TIỀN"/>
+								</Column>
+								
+							</columns>
+							<items>
+								<ColumnListItem vAlign="Middle">
+									<cells>
+										<Button icon="sap-icon://delete" press="onDelItem" type="Reject"/>
+										<ObjectIdentifier title="{objectView>MaterialNumber}"/>
+										<Text text="{objectView>MaerialDesc}"/>
+										<Input value="{objectView>Quantity}" editable="true" change="onQuantityChange" textAlign="End" type="Number"/>
+										<Text text="{objectView>UnitOfMeasure}"/>
+										<Text text="{path:'objectView>NetWeight', type: 'sap.ui.model.odata.type.Decimal' , constraints:{ precision:21, scale:0 },formatOptions: {groupingSeparator: '.', decimalSeparator : ','}}"/>
+										<Text text="{objectView>Werks}"/>
+										<Text text="{path:'objectView>Price', type: 'sap.ui.model.odata.type.Decimal' , constraints:{ precision:21, scale:0 },formatOptions: {groupingSeparator: '.', decimalSeparator : ','}}"/>
+										<Text text="{objectView>ReBate}"/>
+										<Text text="{objectView>TaxAmount}"/>
+										<Input value="{path:'objectView>TotalItemPrice', type: 'sap.ui.model.odata.type.Decimal' , constraints:{ precision:21, scale:0 },formatOptions: {groupingSeparator: '.', decimalSeparator : ','}}" description="{objectView>Currency}" editable="false" textAlign="End"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						</content>
+        				</ScrollContainer>
+						<Table id="simulate" inset="false" class="tblInformation" visible="false">
+							<columns>
+								<Column minScreenWidth="Desktop" demandPopin="false" width="3rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" width="8rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="10rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="6rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="4rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="7rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="7rem">
+									<Text text=""/>
+								</Column>
+								<Column hAlign="Begin" width="7rem">
+									<Text text=""/>
+								</Column>
+								<Column hAlign="End" width="7rem">
+									<Text text=""/>
+								</Column>
+								<Column minScreenWidth="Desktop" demandPopin="false" hAlign="End" width="7rem">
+									<Text text=""/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem class="totalFooterFake">
+									<cells>
+										<ObjectIdentifier title="Tổng gì đó"/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<ObjectIdentifier title="TỔNG TIÊN"/>
+										<ObjectIdentifier title="{objectView>/sTotal}"/>
+										<Text text=""/>
+									</cells>
+									<cells>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<Text text=""/>
+										<ObjectIdentifier title="Tổng chiết khấu"/>
+										<ObjectIdentifier title="{objectView>/sTotal}"/>
+										<Text text=""/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+						<l:VerticalLayout class="sapUiContentPadding" width="100%">
+								<Label text="Σ Trọng lượng: {path:'objectView>/sTotalWeight', type: 'sap.ui.model.odata.type.Decimal' , constraints:{ precision:21, scale:0 },formatOptions: {groupingSeparator: '.', decimalSeparator : ','}}"			design="Bold"/>
+					
+								<Label text="Σ Chiết khấu: {path:'objectView>/sTotalReBate', type: 'sap.ui.model.odata.type.Decimal' , constraints:{ precision:21, scale:0 },formatOptions: {groupingSeparator: '.', decimalSeparator : ','}}"			design="Bold"/>
+								<Label text="Σ Thanh toán: {path:'objectView>/sTotal', type: 'sap.ui.model.odata.type.Decimal' , constraints:{ precision:21, scale:0 },formatOptions: {groupingSeparator: '.', decimalSeparator : ','}}"			design="Bold"/>
+						</l:VerticalLayout>
+						
+					</IconTabFilter>
+				</items>
+			</IconTabBar>
+		</semantic:content>
+		<semantic:customFooterContent>
+			<Button id="kttk" text="KT TỒN KHO" type="Default" press="onMatAvailablityCheck" visible="true"/>
+			<Button id="tdh" text="TẠO ĐƠN HÀNG" type="Accept" press="onCreateSalesOrder" visible="false"/>
+			<Button id="mb52" text="BÁO CÁO MB52" type="Up" press="onMb52Open" visible="true"/>
+			<Button id="va05" text="BÁO CÁO VA05" type="Up" press="onVa05Open" visible="true"/>
+		</semantic:customFooterContent>
+	</semantic:SemanticPage>
+</mvc:View>
